@@ -25,7 +25,7 @@ public class LoginTable_Controller implements ILoginMvc {
             if(!password.matches("(.*)[0-9]+?(.*)")) {
                 return PASSWORD_DIGIT;
             }
-            if(!password.matches("(.*)[a-z]+?(.*)[A-Z]+?(.*)")) {
+            if(!(password.matches("(.*)[a-z]+?(.*)") && password.matches("(.*)[A-Z]+?(.*)"))) {
                 return PASSWORD_CASE;
             }
             return OK;
